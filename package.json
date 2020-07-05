@@ -1,0 +1,56 @@
+{
+  "safename": "paste-gd",
+  "name": "paste.gd",
+  "title": "Paste",
+  "description": "",
+  "version": "1.0.0",
+  "private": true,
+  "homepage": "https://paste.gd",
+  "bugs": {
+    "url": "https://github.com/webdev.sh/paste.gd/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webdev.sh/paste.gd.git"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "compression": "^1.7.4",
+    "express": "^4.17.1",
+    "logfmtr": "^1.10.1",
+    "morgan": "^1.10.0",
+    "pug": "^3.0.0",
+    "serve-favicon": "^2.5.0",
+    "yid": "^1.3.0",
+    "zid": "^0.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  },
+  "author": {
+    "name": "Andrew Chilton",
+    "email": "andychilton@gmail.com",
+    "url": "https://chilts.org",
+    "twitter": "https://twitter.com/andychilton",
+    "github": "https://github.com/chilts"
+  },
+  "keywords": [
+    "paste",
+    "pastebin",
+    "paste bin",
+    "text",
+    "textbin",
+    "text bin",
+    "ascii",
+    "asciibin",
+    "ascii bin",
+    "utf8",
+    "utf8bin",
+    "utf8 bin"
+  ],
+  "license": "Apache-2.0"
+}

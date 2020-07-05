@@ -1,0 +1,25 @@
+extends layout
+
+block content
+
+  .jumbotron
+    h2.display-4 New Paste
+    form(method="post" action="/")
+      .form-group
+        input#title.form-control(type="text" name="Title" placeholder="Title ... (optional)" value="")
+      .form-group
+        textarea#text.form-control(name="Text" rows="15" placeholder="Text ...")
+      fieldset.form-group
+        .form-check
+          label.form-check-label
+            input#public.form-check-input(type="radio" name="Visibility" value="public" checked="")
+            | Public (Anyone can find it.)
+        .form-check
+          label.form-check-label
+            input#unlisted.form-check-input(type="radio" name="Visibility" value="unlisted")
+            | Unlisted (Paste URL required to view.)
+        .form-check.disabled
+          label.form-check-label
+            input#encrypted.form-check-input(type="radio" name="Visibility" value="encrypted" disabled="")
+            | Encrypted (Not yet implemented.)
+      button.btn.btn-primary(type="submit") Create New Paste
