@@ -4,22 +4,24 @@ block content
 
   .jumbotron
     h2.display-4 New Paste
+    if err
+      p.alert.alert-danger= err
     form(method="post" action="/")
       .form-group
-        input#title.form-control(type="text" name="Title" placeholder="Title ... (optional)" value="")
+        input#title.form-control(type="text" name="title" placeholder="Title ... (optional)" value=( form.title || '' ))
       .form-group
-        textarea#text.form-control(name="Text" rows="15" placeholder="Text ...")
+        textarea#text.form-control(name="text" rows="15" placeholder="Text ...")= form.text || ''
       fieldset.form-group
         .form-check
           label.form-check-label
-            input#public.form-check-input(type="radio" name="Visibility" value="public" checked="")
+            input#public.form-check-input(type="radio" name="visibility" value="public" checked=(form.visibility === "public"))
             | Public (Anyone can find it.)
         .form-check
           label.form-check-label
-            input#unlisted.form-check-input(type="radio" name="Visibility" value="unlisted")
+            input#unlisted.form-check-input(type="radio" name="visibility" value="unlisted" checked=(form.visibility === "unlisted"))
             | Unlisted (Paste URL required to view.)
-        .form-check.disabled
+        // .form-check.disabled
           label.form-check-label
-            input#encrypted.form-check-input(type="radio" name="Visibility" value="encrypted" disabled="")
+            input#encrypted.form-check-input(type="radio" name="visibility" value="encrypted" checked=(form.visibility === "encrypted") disabled="")
             | Encrypted (Not yet implemented.)
       button.btn.btn-primary(type="submit") Create New Paste
